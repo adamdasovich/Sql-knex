@@ -1,17 +1,17 @@
-const express = require('express');
+const express = require("express");
 
-const lessonsRouter = require('../Routes/lessons-routes')
-const messagesRouter = require('../Routes/messages-routes')
+const lessonsRouter = require("../Routes/lessons-routes");
+const messagesRouter = require("../Routes/messages-routes");
 
 const server = express();
 
 server.use(express.json());
 
-server.get('/', (req, res) => {
-    res.json({ message: "this is a server"})
+server.get("/", (req, res) => {
+  res.json({ message: "This is the furthest I have gotten" });
 });
 
-server.use('/api/lessons', lessonsRouter)
-server.use('/api/messages', messagesRouter)
+server.use("/api/lessons", lessonsRouter);
+server.use("/api/messages", messagesRouter);
 
 module.exports = server;
